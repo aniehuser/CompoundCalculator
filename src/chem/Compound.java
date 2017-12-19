@@ -16,26 +16,20 @@ public class Compound {
 			this.molarMass = -1;
 		}
 	}
+	
 	Compound(Element e){
 		this.formula = e.getSymbol();
 		this.molarMass = Double.parseDouble(e.getAtomicMass());
 	}
 	
-	public void multiply(String multiplier){
-		if(!multiplier.matches("[2-9]\\d*]")){
-			System.out.println("Invalid Multiplier! Must be a number greater than 1.");
-			return;
-		}
-		this.formula = String.format("(%1$)%2$", this.formula, multiplier);
-		this.molarMass *= Double.parseDouble(multiplier);
+	public Compound multiply(String multiplier){	
+		return new Compound("(" + this.formula + ")" +  multiplier);
 	}
-	public void add(Element e){
-		this.formula += e.getSymbol();
-		this.molarMass += Double.parseDouble(e.getAtomicMass());
+	public Compound add(Element e){
+		return new Compound(this.formula += e.getSymbol());
 	}
-	public void add(Compound c){
-		this.formula += c.formula;
-		this.molarMass += c.molarMass;
+	public Compound add(Compound c){
+		return new Compound(this.formula += c.formula);
 	}
 	
 	public String getFormula(){
@@ -56,7 +50,7 @@ public class Compound {
 		
 		// should not happen
 		if(l==0)
-			return -9999999;
+			throw new Exception("Helper Method Error");
 			
 		double sum = 0;
 		
@@ -134,6 +128,5 @@ public class Compound {
 		return "Formula.....: "+formula +
 			 "\nMolar Mass..: "+molarMass;
 	}
-	
 	
 }

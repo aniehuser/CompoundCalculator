@@ -1,39 +1,33 @@
 package chem;
 
-import java.util.Scanner;
-
 public class InputHandler {
 	
-	public static String getElement(){
-		Scanner s = new Scanner(System.in);
+	public static boolean getElement(StringContainer element){
 		System.out.print("Input Element: ");
-		String element = s.nextLine();
-		s.close();
+		element.fill(Prog.reader.nextLine());
 		
-		if(!element.matches("[A-Z][a-z]?")){
-			System.out.println("Invalid element syntax.");
-			return "";
+		if(!element.get().matches("[A-Z][a-z]?")){
+			System.out.println("Invalid: Incorrect element syntax.");
+			return false;
 		}
 		
-		return element;
+		return true;
 	}
 	
-	public static String getCompound(){
-		Scanner s = new Scanner(System.in);
+	public static boolean getCompound(StringContainer compound){
 		System.out.print("Input Compound: ");
-		String compound = s.nextLine();
-		s.close();
+		compound.fill(Prog.reader.nextLine());
 		
-		if(!checkParens(compound)){
+		if(!checkParens(compound.get())){
 			System.out.println("Invalid: Unbalanced Parenthesis.");
-			return "";
+			return false;
 		}
-		if(compound.matches(".*\\(\\).*|.*\\)$|.*\\)\\D.*")){
+		if(compound.get().matches(".*\\(\\).*|.*\\)|.*\\)\\D.*")){
 			System.out.println("Invalid: Extra Parenthesis.");
-			return "";
+			return false;
 		}
 		
-		return compound;
+		return true;
 	}
 	
 	
