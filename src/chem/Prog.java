@@ -24,18 +24,18 @@ public class Prog {
 		
 		///////////////////////////////
 		////////////TESTING////////////
-		 String EXAMPLE_TEST = "(Aa)5)";//"(HaHHa1H1(O2)10Ha10H10)12H";
-
-	    
-	        System.out.println(EXAMPLE_TEST.matches(".*\\(\\).*|.*\\)$|.*\\)\\D.*"));
-	        System.out.println(EXAMPLE_TEST.matches(".*\\)"));
-	        String[] splitString = (EXAMPLE_TEST.split(".*\\(\\).*|.*\\)$|.*\\)\\D.*"));//[a-z]|(\\D{2}))
-	        System.out.println(splitString.length);// should be 14
-	        for (String string : splitString) {
-	            System.out.println(string);
-	        }
-	        // replace all whitespace with tabs
-	        System.out.println(EXAMPLE_TEST.replaceAll("\\s+", "\t"));
+//		 String EXAMPLE_TEST = "(Aa)5)";//"(HaHHa1H1(O2)10Ha10H10)12H";
+//
+//	    
+//	        System.out.println(EXAMPLE_TEST.matches(".*\\(\\).*|.*\\)$|.*\\)\\D.*"));
+//	        System.out.println(EXAMPLE_TEST.matches(".*\\)"));
+//	        String[] splitString = (EXAMPLE_TEST.split(".*\\(\\).*|.*\\)$|.*\\)\\D.*"));//[a-z]|(\\D{2}))
+//	        System.out.println(splitString.length);// should be 14
+//	        for (String string : splitString) {
+//	            System.out.println(string);
+//	        }
+//	        // replace all whitespace with tabs
+//	        System.out.println(EXAMPLE_TEST.replaceAll("\\s+", "\t"));
 		 while(true){
 	        StringContainer compound = new StringContainer();
 	        if(InputHandler.getCompound(compound))

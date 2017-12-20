@@ -4,8 +4,17 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Hashtable;
 
+/**
+ * Intended to load any data needed for running the program
+ * @author anthonyniehuser
+ *
+ */
 public class FileLoader {
 
+	/**
+	 * Returns a hashtable of all elements in the periodic table with each elements symbol as a key
+	 * @return Hashtable <String, Element>
+	 */
 	public static Hashtable<String, Element> LoadElements(){
 		BufferedReader buff = null;
 		String filepath = System.getProperty("user.dir") + "/files/" + "ElementSpreadSheet.csv";

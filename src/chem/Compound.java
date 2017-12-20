@@ -2,6 +2,11 @@ package chem;
 
 import java.util.Arrays;
 
+/**
+ * Calculates and holds information about a chemical compound
+ * @author anthonyniehuser
+ *
+ */
 public class Compound {
 	private String formula;
 	private double molarMass;

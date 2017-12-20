@@ -1,5 +1,10 @@
 package chem;
 
+/**
+ * Intended to handle some bad user input
+ * @author anthonyniehuser
+ *
+ */
 public class InputHandler {
 	
 	public static boolean getElement(StringContainer element){
@@ -10,7 +15,6 @@ public class InputHandler {
 			System.out.println("Invalid: Incorrect element syntax.");
 			return false;
 		}
-		
 		return true;
 	}
 	
@@ -26,7 +30,6 @@ public class InputHandler {
 			System.out.println("Invalid: Extra Parenthesis.");
 			return false;
 		}
-		
 		return true;
 	}
 	

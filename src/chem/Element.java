@@ -1,6 +1,12 @@
 package chem;
 
+
 @SuppressWarnings("unused")
+/**
+ * Container Class containing information about a specific element from the periodic table
+ * @author anthonyniehuser
+ *
+ */
 public class Element {
 	private String atomicNumber;
 	private String symbol;
