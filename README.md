@@ -5,9 +5,9 @@ To help with chem 101
 Figure this out
 
 # TODO
-Insure project can be pulled and used on another Linux system
-Polish Back end and compile into .jar
-Create basic GUI
+- Insure project can be pulled and used on another Linux system
+- Polish Back end and compile into .jar
+- Create basic GUI
 
 # Features to Add Later
 - common compound library
