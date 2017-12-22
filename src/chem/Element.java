@@ -79,9 +79,9 @@ public class Element {
 		c.add(e);
 		return c;	
 	}
-	public Compound multiply(String multiplier){
+	public Compound multiply(double multiplier){
 		
-		return new Compound(this.symbol + multiplier);
+		return new Compound(this.symbol + multiplier, Double.parseDouble(atomicMass) * multiplier);
 	}
 	
 	public String getAtomicNumber(){

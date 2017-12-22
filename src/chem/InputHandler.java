@@ -7,29 +7,41 @@ package chem;
  */
 public class InputHandler {
 	
-	public static boolean getElement(StringContainer element){
+	public static boolean getElement(CompoundParamContainer element){
 		System.out.print("Input Element: ");
-		element.fill(Prog.reader.nextLine());
+		element.setName(Prog.reader.nextLine());
 		
-		if(!element.get().matches("[A-Z][a-z]?")){
+		if(!element.getName().matches("[A-Z][a-z]?")){
 			System.out.println("Invalid: Incorrect element syntax.");
 			return false;
 		}
+		
+		
 		return true;
 	}
 	
-	public static boolean getCompound(StringContainer compound){
+	public static boolean getCompound(CompoundParamContainer compound){
 		System.out.print("Input Compound: ");
-		compound.fill(Prog.reader.nextLine());
+		compound.setName(Prog.reader.nextLine());
 		
-		if(!checkParens(compound.get())){
+		if(!checkParens(compound.getName())){
 			System.out.println("Invalid: Unbalanced Parenthesis.");
 			return false;
 		}
-		if(compound.get().matches(".*\\(\\).*|.*\\)|.*\\)\\D.*")){
+		if(compound.getName().matches(".*\\(\\).*|.*\\)|.*\\)\\D.*")){
 			System.out.println("Invalid: Extra Parenthesis.");
 			return false;
 		}
+		
+		try{
+			String[] splitCompound = compound.getName().split(Prog.splitCompound);
+			compound.setMass(Calculate.compoundMolarMassHelper(splitCompound));
+		} catch(Exception e){
+			System.out.println("Invalid: Compound Syntax.");
+			return false;
+		}
+		
+		
 		return true;
 	}
 	
