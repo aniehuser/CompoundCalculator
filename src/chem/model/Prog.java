@@ -1,4 +1,4 @@
-package chem;
+package chem.model;
 
 import java.io.IOException;
 import java.util.Hashtable;
@@ -17,13 +17,13 @@ public class Prog {
 	public static final String splitCompound = "(?<=\\))|(?=[A-Z][a-z]?\\d*|\\)|\\()";
 	public static Hashtable<String, Element> elements; 
 
-	public static void main(String[] args) {
-		setProjectVariables();
-		getLogger();
-		
-		
-		///////////////////////////////
-		////////////TESTING////////////
+//	public static void main(String[] args) {
+//		setProjectVariables();
+//		getLogger();
+//		
+//		
+//		///////////////////////////////
+//		////////////TESTING////////////
 //		 String EXAMPLE_TEST = "(Aa)5)";//"(HaHHa1H1(O2)10Ha10H10)12H";
 //
 //	    
@@ -36,17 +36,17 @@ public class Prog {
 //	        }
 //	        // replace all whitespace with tabs
 //	        System.out.println(EXAMPLE_TEST.replaceAll("\\s+", "\t"));
-		 while(true){
-	        CompoundParamContainer compound = new CompoundParamContainer();
-	        if(InputHandler.getCompound(compound))
-	        	System.out.println(new Compound(compound));
-		 }
-		
-		
-		///////////////////////////////
-		///////////////////////////////
-
-	}
+//		 while(true){
+//	        CompoundParamContainer compound = new CompoundParamContainer();
+//	        if(InputHandler.getCompound(compound))
+//	        	System.out.println(new Compound(compound));
+//		 }
+//		
+//		
+//		///////////////////////////////
+//		///////////////////////////////
+//
+//	}
 	
 	private static void setProjectVariables(){
 		projDir = System.getProperty("user.dir");

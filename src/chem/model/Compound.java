@@ -1,6 +1,4 @@
-package chem;
-
-import java.util.Arrays;
+package chem.model;
 
 /**
  * Calculates and holds information about a chemical compound
@@ -11,17 +9,17 @@ public class Compound {
 	private String formula;
 	private double molarMass;
 	
-	Compound(String formula, double mass){
+	public Compound(String formula, double mass){
 		this.formula = formula;
 		this.molarMass = mass;
 		
 	}
-	Compound(CompoundParamContainer c){
+	public Compound(CompoundParamContainer c){
 		formula = c.getName();
 		molarMass = c.getMass();
 	}
 	
-	Compound(Element e){
+	public Compound(Element e){
 		this.formula = e.getSymbol();
 		this.molarMass = Double.parseDouble(e.getAtomicMass());
 	}

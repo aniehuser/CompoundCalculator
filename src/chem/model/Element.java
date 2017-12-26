@@ -1,4 +1,4 @@
-package chem;
+package chem.model;
 
 
 @SuppressWarnings("unused")

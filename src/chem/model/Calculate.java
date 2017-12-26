@@ -1,4 +1,4 @@
-package chem;
+package chem.model;
 
 import java.util.Arrays;
 

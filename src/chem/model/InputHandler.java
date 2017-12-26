@@ -1,4 +1,4 @@
-package chem;
+package chem.model;
 
 /**
  * Intended to handle some bad user input

@@ -1,4 +1,4 @@
-package chem;
+package chem.model;
 
 /**
  * Container class for passing strings by reference
