@@ -2,6 +2,8 @@ package chem.model;
 
 import java.util.Arrays;
 
+import chem.controller.ChemRunner;
+
 public class Calculate {
 	/**
 	 * takes string array of compound and converts to appropriate molar mass
@@ -77,11 +79,11 @@ public class Calculate {
 		String[] str = (value.matches("[A-Z][a-z]\\d*")) ? value.split("(?<=[a-z])") : value.split("(?<=[A-Z])");
 	
 		//Check if valid element
-		if(!Prog.elements.containsKey(str[0]))
+		if(!ChemRunner.elements.containsKey(str[0]))
 			throw new Exception("Invalid Element Input: " + str[0]);
 		
 		//check if element has a molarmass
-		String atomicMass = Prog.elements.get(str[0]).getAtomicMass();
+		String atomicMass = ChemRunner.elements.get(str[0]).getAtomicMass();
 		if(atomicMass.equals(Prog.empty))
 			throw new Exception("Element:::" + str[0] + "::: has an undetermined molar mass. ");
 		

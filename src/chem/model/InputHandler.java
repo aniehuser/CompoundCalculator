@@ -1,5 +1,7 @@
 package chem.model;
 
+import chem.controller.ChemRunner;
+
 /**
  * Intended to handle some bad user input
  * @author anthonyniehuser
@@ -9,7 +11,7 @@ public class InputHandler {
 	
 	public static boolean getElement(CompoundParamContainer element){
 		System.out.print("Input Element: ");
-		element.setName(Prog.reader.nextLine());
+		//element.setName(Prog.reader.nextLine());
 		
 		if(!element.getName().matches("[A-Z][a-z]?")){
 			System.out.println("Invalid: Incorrect element syntax.");
@@ -22,7 +24,7 @@ public class InputHandler {
 	
 	public static boolean getCompound(CompoundParamContainer compound){
 		System.out.print("Input Compound: ");
-		compound.setName(Prog.reader.nextLine());
+		//compound.setName(Prog.reader.nextLine());
 		
 		if(!checkParens(compound.getName())){
 			System.out.println("Invalid: Unbalanced Parenthesis.");

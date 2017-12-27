@@ -2,22 +2,17 @@ package chem.view;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.BoxLayout;
-//import com.jgoodies.forms.layout.FormLayout;
-//import com.jgoodies.forms.layout.ColumnSpec;
-//import com.jgoodies.forms.layout.RowSpec;
-
 import chem.controller.BaseController;
+import chem.model.CompoundParamContainer;
+import chem.model.InputHandler;
 
 //import com.jgoodies.forms.layout.FormSpecs;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JFormattedTextField;
-import javax.swing.JSplitPane;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -34,6 +29,7 @@ public class TestPanel extends JPanel{
 		this.controller = controller;
 		SetPanelLayout();
 		SetComponents();
+		SetListeners();
 		
 	}
 	
@@ -65,10 +61,7 @@ public class TestPanel extends JPanel{
 		add(textField, gbc_textField);
 		
 		btnCalculate = new JButton("Calculate");
-		btnCalculate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		
 		GridBagConstraints gbc_btnCalculate = new GridBagConstraints();
 		gbc_btnCalculate.anchor = GridBagConstraints.WEST;
 		gbc_btnCalculate.insets = new Insets(0, 0, 5, 5);
@@ -92,6 +85,22 @@ public class TestPanel extends JPanel{
 		gbc_formattedTextField.gridx = 1;
 		gbc_formattedTextField.gridy = 2;
 		add(formattedTextField, gbc_formattedTextField);
+	}
+	
+	private void SetListeners(){
+		btnCalculate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click) {
+				CompoundParamContainer input = new CompoundParamContainer();
+				input.setName(textField.getText());
+				if(!InputHandler.getCompound(input)){
+					formattedTextField.setText("Invalid Input");
+					//return;
+				}
+				
+				formattedTextField.setText(String.valueOf(input.getMass()));
+				
+			}
+		});
 	}
 	
 }

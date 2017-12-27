@@ -44,11 +44,13 @@ public class ChemRunner {
 //	        }
 //	        // replace all whitespace with tabs
 //	        System.out.println(EXAMPLE_TEST.replaceAll("\\s+", "\t"));
-		 while(true){
-	        CompoundParamContainer compound = new CompoundParamContainer();
-	        if(InputHandler.getCompound(compound))
-	        	System.out.println(new Compound(compound));
-		 }
+		
+		
+//		 while(true){
+//	        CompoundParamContainer compound = new CompoundParamContainer();
+//	        if(InputHandler.getCompound(compound))
+//	        	System.out.println(new Compound(compound));
+//		 }
 		
 		
 		///////////////////////////////
