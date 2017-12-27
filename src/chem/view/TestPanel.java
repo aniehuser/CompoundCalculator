@@ -94,7 +94,7 @@ public class TestPanel extends JPanel{
 				input.setName(textField.getText());
 				if(!InputHandler.getCompound(input)){
 					formattedTextField.setText("Invalid Input");
-					//return;
+					return;
 				}
 				
 				formattedTextField.setText(String.valueOf(input.getMass()));
